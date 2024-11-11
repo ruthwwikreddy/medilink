@@ -1,3 +1,1275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Color Palette */
+:root {
+    --dark-gold: #b89d0b;
+    --black: #202020;
+    --gold: #ffc107;
+    --dark-background: #282828;
+    --light-background: #333333;
+    --text-color: #f8f9fa;
+    --secondary-text: #adb5bd;
+    --accent-color: #ffc107;
+    --border-color: #444444;
+    --hover-background: #b89d0b;
+}
+
+/* Basic styles for MediLink */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-background);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: var(--black);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.7);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 30px;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hover-background);
+    top: 100%;
+    left: 0;
+    transition: top 0.3s ease, background-color 0.3s ease; /* Smooth color transition */
+    z-index: -1;
+    border-radius: 30px;
+}
+
+nav ul li a:hover::after {
+    top: 0;
+}
+
+nav ul li a:hover {
+    color: var(--text-color);
+}
+
+/* Main Content Area */
+#content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Home Page Styles */
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Introductory Section */
+#home-intro {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--light-background);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}
+
+#home-intro h1 {
+    font-size: 3.5em;
+    color: var(--gold);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+#home-intro p {
+    font-size: 1.3em;
+    color: var(--secondary-text);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home-intro .portal-buttons a {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 35px;
+    background-color: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#home-intro .portal-buttons a:hover {
+    background-color: var(--hover-background);
+    transform: translateY(-5px);
+    color: var(--text-color);
+}
+
+/* Section Styles */
+h2 {
+    text-align: center;
+    color: var(--gold);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+/* Problems and Solutions Sections */
+#problems, #solutions {
+    background-color: var(--light-background);
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+#problems h2, #solutions h2 {
+    text-align: center;
+    color: var(--gold);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+#problems ul, #solutions ul {
+    max-width: 900px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+#problems li, #solutions li {
+    background-color: var(--black);
+    margin: 15px 0;
+    padding: 20px;
+    border-left: 6px solid var(--gold);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+    opacity: 0.95;
+}
+
+#problems li:hover, #solutions li:hover {
+    background-color: var(--black);
+    border-left-color: var(--warm-gold);
+    opacity: 1;
+}
+
+#problems li strong, #solutions li strong {
+    color: var(--gold);
+    font-size: 1.1em;
+}
+
+/* Pitch Presentation Section */
+#pitch-presentation {
+    background-color: var(--light-background);
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+#pitch-presentation h2 {
+    color: var(--gold);
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+#pitch-presentation p {
+    color: var(--secondary-text);
+    margin-bottom: 35px;
+    font-size: 1.2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pitch-presentation iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+#pitch-presentation a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gold);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#pitch-presentation a:hover {
+    color: var(--hover-background);
+}
+
+/* Features Highlight Section */
+#features {
+    background-color: var(--light-background);
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+#features h2 {
+    text-align: center;
+    color: var(--gold);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+#features .feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+#features .feature-item {
+    flex: 1 1 300px;
+    background-color: var(--black);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#features .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+}
+
+#features .feature-item h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+#features .feature-item p {
+    color: var(--secondary-text);
+    font-size: 1em;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+/* Button Styling */
+button, .button, a.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Enhanced transitions */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+button:hover, .button:hover, a.button:hover {
+    background-color: var(--hover-background);
+    transform: translateY(-3px);
+    color: var(--text-color);
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 25px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--black);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Added transitions */
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: var(--medium-gray);
+}
+
+form label {
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1.1em;
+}
+
+form button {
+    width: auto;
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 12px 30px;
+}
+
+form button:hover {
+    background-color: var(--hover-background);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #features .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #features .feature-item {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #home-intro h1 {
+        font-size: 2.5em;
+    }
+
+    #home-intro p {
+        font-size: 1em;
+    }
+
+    #pitch-presentation iframe {
+        height: 300px;
+    }
+
+    #features .feature-item {
+        width: 90%;
+    }
+}
+
+/* Additional Styling for Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Link Styling */
+a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--hover-background);
+}
+
+/* Appointments Section */
+#appointments {
+    background-color: var(--light-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+#appointments h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+#appointments-list {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#appointments-list li {
+    background-color: var(--black);
+    color: var(--text-color);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--gold);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--black);
+    color: var(--text-color);
+}
+
+form button {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--hover-background);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--dark-gold);
+    color: var(--text-color);
+}
+
+td {
+    background-color: var(--black);
+    color: var(--text-color);
+}
+
+/* Quick Links */
+.quick-links {
+    margin: 20px 0;
+}
+
+.quick-links a {
+    color: var(--gold);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+/* Health Tips Section */
+.health-tips {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Additional Styles for Patient Dashboard */
+#patient-dashboard {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#patient-dashboard h1 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.quick-links {
+    margin: 20px 0;
+}
+
+.quick-links a {
+    color: var(--gold);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for Health Tips Section */
+.health-tips {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.health-tips h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+/* Styles for Inventory Management */
+#inventory-management {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+#inventory-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#inventory-management th, #inventory-management td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+#inventory-management th {
+    background-color: var(--dark-gold);
+    color: var(--text-color);
+}
+
+#inventory-management td {
+    background-color: var(--black);
+    color: var(--text-color);
+}
+
+/* Styles for Bed Management */
+#bed-management {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+#bed-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#bed-management th, #bed-management td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+#bed-management th {
+    background-color: var(--dark-gold);
+    color: var(--text-color);
+}
+
+#bed-management td {
+    background-color: var(--black);
+    color: var(--text-color);
+}
+
+/* Styles for Search Patient */
+#search-patient {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+#search-patient form {
+    margin-bottom: 20px;
+}
+
+#search-patient h2 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+/* Styles for Register Patient */
+#register-patient {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+#register-patient h2 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+/* Styles for Appointments */
+#appointments {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#appointments h2 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+#appointments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#appointments-list li {
+    background-color: var(--black);
+    color: var(--text-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+/* Styles for Medicine Inventory */
+#medicine-inventory {
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#medicine-inventory h2 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+#inventory-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#inventory-list li {
+    background-color: var(--black);
+    color: var(--text-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+/* styles.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: #f9fafb;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111827;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.tabs {
+    margin-top: 16px;
+}
+
+.tabs-list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-trigger {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    color: #6b7280;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.tab-trigger:hover {
+    color: #0369a1;
+}
+
+.tab-trigger.active {
+    color: #0369a1;
+    border-bottom: 2px solid #0369a1;
+}
+
+.tab-content {
+    display: none;
+    padding: 16px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.list-disc {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #374151;
+}
+
+h3, h4 {
+    color: #111827;
+    margin-top: 0;
+}
+
+h4 {
+    margin-bottom: 8px;
+}
+
+/* Enhancements for hover effects */
+a:hover, button:hover, .button:hover, a.button:hover {
+    color: var(--text-color); /* Consistent text color on hover */
+}
+
+/* Navigation for Medical Records, Prescriptions, Appointments, Medication Inventory */
+.quick-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-links a {
+    color: var(--gold);
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.quick-links a:hover {
+    background-color: var(--hover-background);
+    color: var(--text-color);
+}
+
+/* Section Styling for Medical Records, Prescriptions, Appointments, Medication Inventory */
+.section-container {
+    background: linear-gradient(145deg, var(--black), var(--dark-background));
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.section-container h2 {
+    color: var(--gold);
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.section-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section-container li {
+    background-color: var(--light-background);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.section-container li:hover {
+    background-color: var(--hover-background);
+}
+
+/* Enhanced Section Styling for Medical Records, Prescriptions, Appointments, Medication Inventory */
+.section-container {
+    background: linear-gradient(145deg, var(--black), var(--dark-background));
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.section-container h2 {
+    color: var(--gold);
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.section-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section-container li {
+    background-color: var(--light-background);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-container li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: var(--hover-background);
+}
+
+/* Enhanced Navigation for Medical Records, Prescriptions, Appointments, Medication Inventory */
+.quick-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: linear-gradient(to right, var(--light-background), var(--dark-background));
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.quick-links a {
+    color: var(--gold);
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.quick-links a:hover {
+    background-color: var(--hover-background);
+    color: var(--text-color);
+    transform: scale(1.05);
+}
+
+/* Medical Records Page Styles */
+#medical-records h2, #medical-records h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+#medical-records p {
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+/* Prescriptions Page Styles */
+#prescriptions h2, #prescriptions h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+#prescriptions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#prescriptions li {
+    background-color: var(--light-background);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Appointments Page Styles */
+#appointments h2, #appointments h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+#appointments ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#appointments li {
+    background-color: var(--light-background);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#appointments form {
+    background-color: var(--dark-background);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Medication Inventory Page Styles (assuming similar structure) */
+#medication-inventory h2, #medication-inventory h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+#medication-inventory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#medication-inventory li {
+    background-color: var(--light-background);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* General Form Styling Enhancements */
+form label {
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="number"], form input[type="date"], form input[type="time"], form input[type="file"], form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--black);
+    color: var(--text-color);
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--hover-background);
+}
+/* Enhanced styles for medical records */
+
+#medical-records {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f1f1f1 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#medical-records h2 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#medical-records h3 {
+    color: #34495e;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#medical-records p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#medical-records p:hover {
+    background-color: #ecf0f1;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #medical-records {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    #medical-records h2 {
+        font-size: 20px;
+    }
+
+    #medical-records h3 {
+        font-size: 16px;
+    }
+}
+
+/* Additional interactive effects */
+#medical-records:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} 
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+}
+
+/* Dashboard Specific Styles */
+#hospital-dashboard {
+    background-color: var(--black);
+    color: var(--gold);
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+
+#hospital-dashboard h1 {
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#hospital-dashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#hospital-dashboard li {
+    background-color: var(--black);
+    color: var(--gold);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 5px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+
+#hospital-dashboard li:hover {
+    transform: translateY(-2px);
+}
+
+#hospital-dashboard .quick-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#hospital-dashboard .quick-links a {
+    color: var(--gold);
+    background-color: var(--black);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#hospital-dashboard .quick-links a:hover {
+    transform: scale(1.05);
+}
+
+#notifications {
+    background-color: var(--black);
+    color: var(--gold);
+    padding: 15px;
+    border-left: 6px solid var(--gold);
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+/* Global Styles for Management Sections */
+.management-section {
+    padding: 20px;
+    background-color: var(--black); /* Consistent dark theme */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Deeper shadow for better depth */
+    color: var(--gold); /* Consistent text color */
+    margin-bottom: 30px; /* Space between sections */
+}
+
+.management-section h2 {
+    margin-bottom: 20px; /* Consistent spacing under headers */
+}
+
+.management-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.management-section th, .management-section td {
+    padding: 12px; /* Slightly larger padding for better readability */
+    text-align: left;
+    border: 1px solid var(--gold); /* Gold borders for better visibility */
+}
+
+.management-section th {
+    background-color: var(--gold); /* Gold background for headers */
+    color: var(--black); /* Black text for contrast */
+}
+
+.management-section td {
+    background-color: var(--black); /* Consistent with section background */
+    color: var(--gold); /* Gold text for readability */
+}
+
+.management-section form {
+    margin-bottom: 20px;
+}
+
+.management-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.management-section li {
+    background-color: var(--black); /* Consistent with section background */
+    color: var(--gold); /* Gold text for readability */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid var(--gold); /* Subtle border for definition */
+}
+
+
 /* Reset some default browser styles for consistency */
 * {
     box-sizing: border-box;
@@ -829,7 +2101,6 @@ h4 {
 a:hover, button:hover, .button:hover, a.button:hover {
     color: var(--text-color); /* Consistent text color on hover */
 }
-
 /* Navigation for Medical Records, Prescriptions, Appointments, Medication Inventory */
 .quick-links {
     display: flex;
@@ -1094,7 +2365,7 @@ form button:hover {
 }
 
 #medical-records p:hover {
-    background-color: #ecf0f1;
+    background-color: #000000;
     cursor: pointer;
 }
 
@@ -1117,3 +2388,4 @@ form button:hover {
 #medical-records:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 } 
+
