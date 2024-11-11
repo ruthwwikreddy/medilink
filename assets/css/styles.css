@@ -2389,3 +2389,55 @@ form button:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 } 
 
+
+/* Dashboard Specific Styles */
+#hospital-dashboard, #patient-dashboard {
+    background-color: var(--light-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+
+#hospital-dashboard h1, #patient-dashboard h1 {
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#hospital-dashboard ul, #patient-dashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#hospital-dashboard li, #patient-dashboard li {
+    background-color: var(--black);
+    color: var(--gold);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 5px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+
+#hospital-dashboard li:hover, #patient-dashboard li:hover {
+    transform: translateY(-2px);
+}
+
+#hospital-dashboard .quick-links, #patient-dashboard .quick-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#hospital-dashboard .quick-links a, #patient-dashboard .quick-links a {
+    color: var(--gold);
+    background-color: var(--black);
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+#hospital-dashboard .quick-links a:hover, #patient-dashboard .quick-links a:hover {
+    background-color: var(--gold);
+    color: var(--black);
+} 
