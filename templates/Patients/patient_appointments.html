@@ -1,0 +1,20 @@
+<!-- Appointments -->
+<link rel="stylesheet" href="../../assets/css/styles.css">
+<div id="appointments">
+    <h2>Your Appointments</h2>
+    <ul id="appointments-list">
+        <li>Appointment with Dr. Smith on 2023-10-15 at 10:00 AM</li>
+        <li>Appointment with Dr. Jones on 2023-11-01 at 2:00 PM</li>
+    </ul>
+    <h3>Book a New Appointment</h3>
+    <form id="book-appointment-form">
+        <label for="appointment-date">Select Date:</label>
+        <input type="date" id="appointment-date" required>
+        <label for="appointment-time">Select Time:</label>
+        <input type="time" id="appointment-time" required>
+        <label for="appointment-doctor">Doctor's Name:</label>
+        <input type="text" id="appointment-doctor" placeholder="Doctor's Name" required>
+        <button type="submit">Book Appointment</button>
+    </form>
+    <div id="appointment-status"></div>
+</div> 
