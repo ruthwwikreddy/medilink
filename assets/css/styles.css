@@ -2957,3 +2957,38 @@ a:hover {
         text-align: center;
     }
 }
+
+/* Health Tips Section Styling */
+.health-tips {
+    background-color: var(--light-background); /* Lighter background for the section */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space above the section */
+    margin-bottom: 20px; /* Space below the section */
+}
+
+.health-tips h3 {
+    color: var(--gold); /* Gold color for headings */
+    margin-bottom: 15px; /* Space below the heading */
+    font-size: 1.8em; /* Larger font size for visibility */
+}
+
+#tips-list {
+    list-style-type: none; /* No bullets for the list */
+    padding: 0; /* No padding to align with the content */
+}
+
+#tips-list li {
+    background-color: var(--black); /* Dark background for each list item */
+    color: var(--text-color); /* Light text for contrast */
+    padding: 10px; /* Padding inside each list item */
+    margin-bottom: 10px; /* Space between list items */
+    border-radius: 6px; /* Rounded corners for list items */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#tips-list li:hover {
+    background-color: var(--hover-background); /* Change background on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
