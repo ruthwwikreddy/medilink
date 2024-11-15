@@ -2,17 +2,39 @@
 <title>Patient Dashboard</title>
 <link rel="stylesheet" href="../../assets/css/styles.css">
 <div id="patient-dashboard">
-    <h1>Welcome to Your Patient Dashboard</h1>
-    <p>Access your medical records, manage appointments, and more.</p>
+    <h1>Welcome back, User!</h1>
+    <p>We're glad to see you. Here's what's new today:</p>
     <!-- Quick Links -->
     <div class="quick-links">
-        <a href="patient_medicalrecords.html">Medical Records</a> |
-        <a href="patient_prescription.html">Prescriptions</a> |
-        <a href="patient_appointments.html">Appointments</a> |
-        <a href="medicine_inventory.html">Medication Inventory</a>
+        <a href="#patient_dashboard">Dashboard</a> |
+        <a href="#medical_records">Medical Records</a> |
+        <a href="#patient_prescription">Prescriptions</a> |
+        <a href="#patient_appointments">Appointments</a> |
+        <a href="#medicine_inventory">Medication Inventory</a>
     </div>
     <div class="health-tips">
         <h3>Health Tips</h3>
-        <p>Stay informed with the latest health tips and alerts tailored for you.</p>
+        <ul id="tips-list">
+            <!-- Health tips will be loaded here dynamically -->
+        </ul>
+    </div>
+    <!-- Add a settings section for dashboard customization -->
+    <div id="dashboard-settings">
+        <h3>Customize Your Dashboard</h3>
+        <form id="dashboard-customization-form">
+            <label>
+                <input type="checkbox" name="widgets" value="medical_records" checked>
+                Show Medical Records
+            </label>
+            <label>
+                <input type="checkbox" name="widgets" value="appointments" checked>
+                Show Appointments
+            </label>
+            <label>
+                <input type="checkbox" name="widgets" value="medicine_inventory" checked>
+                Show Medicine Inventory
+            </label>
+            <button type="submit">Save Preferences</button>
+        </form>
     </div>
 </div>
